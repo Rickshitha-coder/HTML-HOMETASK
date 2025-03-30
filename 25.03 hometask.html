@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Light Toggle</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a; /* Dark room */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        .container {
+            text-align: center;
+        }
+
+       
+
+        .bulb {
+            width: 180px;
+            height: 180px;
+            background-color: yellow;
+            border-radius: 100%;
+            box-shadow: 0 0 10px red;
+            margin-bottom: 10px;
+            transition: background-color 1s ease, box-shadow 1s ease;
+        }
+
+        /* Flicker effect when light turns on */
+        @keyframes flicker {
+            0%, 100% { opacity: 1; }
+            10% { opacity: 0.95; }
+            20% { opacity: 0.9; }
+            30% { opacity: 0.85; }
+            40% { opacity: 1; }
+        }
+
+        input[type="checkbox"]:checked + label .bulb {
+            background-color: #fff5b7;
+            box-shadow: 0 0 60px #fff5b7, 0 0 100px #fff5b7;
+            animation: flicker 0.3s infinite alternate;
+        }
+
+        input[type="checkbox"]:checked ~ body {
+            background-color: #666;
+        }
+
+        .toggle-text {
+            font-size: 20px;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .switch-label {
+            cursor: wait;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" id="light-toggle">
+        <label for="light-toggle" class="switch-label">
+            <div class="bulb"></div>
+        </label>
+        <div class="toggle-text">Click the bulb to toggle light</div>
+    </div>
+</body>
+</html>
