@@ -1,0 +1,141 @@
+<!--
+Date: 6-5-25 
+Task 1: 
+You're building a dashboard for a web application that shows different types of 
+system messages to users. Each message has a different purpose (e.g., success, 
+error, info, warning), and you want to use color coding to help users quickly 
+understand the message type. 
+Requirements 
+1. Create 4 notification messages, each in a <div>, with: 
+o A different Bootstrap .bg-* class to indicate the message type. 
+o A matching .text-* class for readable text (e.g., white on dark 
+backgrounds). 
+o An appropriate emoji or icon to enhance the message.(eg:-   
+Error:</strong> Unable to connect to the server. Please try again.) 
+o Bolded message title and a short description underneath. 
+2. Use these four message types: 
+o Success: Green background and white text 
+o Error: Red background and white text 
+o Info: Blue background and white text 
+o Warning: Yellow background and dark text  
+3. Include all messages inside a <div class="container"> for layout.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CloudNest - Email Dashboard</title>
+  <meta name="viewport" content="width=devie-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #f1f3f5;
+    }
+    .header {
+      background-color: #343a40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+	  margin-bottom:15px;
+    }
+	
+    .email-form {
+      background-color: #fff;
+	 
+      padding: 25px;
+      max-width: 500px;
+      margin:auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+	label {
+      display: block;
+      margin-bottom:2px;
+      font-weight: bold;
+    }
+	input[type="email"],
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+	button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Email Header -->
+  <div class="header">
+    <h2>CloudNest Email Center</h2>
+    <p>Send updates, alerts, and reports easily</p>
+  </div>
+  
+  <!-- Email Form -->
+  <div class="container">
+    <div class="email-form">
+      <h3>Compose New Email</h3>
+      <form>
+       
+          <label for="to" >To:</label><br>
+          <input type="email"  id="to" placeholder="recipient@example.com"><br>
+      
+        
+          <label for="subject" >Subject:</label><br>
+          <input type="text" id="subject">
+
+        
+          <label for="message" >Message:</label><br>
+          <textarea id="message" rows="5"></textarea>
+   
+        <button type="submit" >Send Email</button>
+      </form>
+    </div>
+ </div>
+ <br><br>
+ <div class="container">
+  
+    <div class="bg-success text-white" style="border-radius:8px;">
+      <strong>✅ Success:</strong>
+      <p>Your email was sent successfully to all recipients.</p>
+    </div>
+
+    <div class="bg-danger text-white" style="border-radius:8px;">
+      <strong>❌ Error:</strong>
+      <p>Failed to connect to the email server. Please check your SMTP settings.</p>
+    </div>
+
+    <div class="bg-primary text-white" style="border-radius:8px;">
+      <strong>ℹ Info:</strong>
+      <p>Attachments larger than 25MB will be automatically uploaded to CloudNest Drive.</p>
+    </div>
+
+    <div class="bg-warning text-dark" style="border-radius:8px;">
+      <strong>⚠ Warning:</strong>
+      <p>You haven’t verified your sender address. Email delivery may be limited.</p>
+    </div>
+   
+  </div>
+
+</body>
+</html>

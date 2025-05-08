@@ -1,0 +1,128 @@
+<!--
+Task 2 
+You're building a basic profile information page that displays a user's name, 
+profile picture, bio, and contact information. You'll use Bootstrap's grid system 
+to arrange content and typography classes for styling text (e.g., headings, 
+muted text, bold text). 
+Requirements 
+1. Use Bootstrap’s grid system to create a responsive 2-column layout: 
+o Left column (col-md-4): Profile picture and name. 
+o Right column (col-md-8): Bio and contact information. 
+2. Apply typography classes: 
+o .h1, .h2, .lead for headings and intro text. 
+o .fw-bold, .text-muted, .text-uppercase, .small for styling specific text.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
+  <style>
+    body {
+      background-color: #e9f5f9;
+      padding: 40px 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .profile-box {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    .profile-img {
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 20px;
+      border: 3px solid #ddd;
+    }
+
+    blockquote {
+      border-left: 5px solid #337ab7;
+      padding-left: 15px;
+    }
+	header{
+	text-align:center;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+	margin:5px;
+	padding:5px;
+	border-radius:3px;
+	}
+	
+  </style>
+</head>
+<body>
+
+  <div class="container">
+  <header>
+  <h1 class="text-uppercase">profile Information</h1>
+  </header>
+    <div class="profile-box">
+      <div class="row">
+        
+        <!-- Left Column: Profile Picture and Name -->
+        <div class="col-md-4 text-center">
+          <img src="https://img.freepik.com/premium-vector/avatar-profile-icon-flat-style-female-user-profile-vector-illustration-isolated-background-women-profile-sign-business-concept_157943-26093.jpg" alt="Profile Picture" class="img-responsive center-block profile-img">
+          <h1 class="text-uppercase">Rickshitha A</h1>
+          <p class="text-muted small">Web Developer</p>
+        </div>
+        
+        <!-- Right Column: Details -->
+        <div class="col-md-8">
+          <h2 class="text-uppercase">About Me</h2>
+          <p class="lead">
+            Passionate web developer with over 2 Months of experience in designing and building user-friendly websites and web applications. Proficient in front-end technologies including HTML, CSS, and frameworks like BootStrap.
+          </p>
+          
+          <h2 class="text-uppercase">Contact Information</h2>
+          <p><strong>Email:</strong> <span class="text-muted">rickshithaanandakumar@gmail.com</span></p>
+          <p><strong>Phone:</strong> <span class="text-muted">+91 9094563354</span></p>
+          <p><strong>Location:</strong> <span class="text-muted">Chengalpattu, Tamil Nadu</span></p>
+          
+          <h2 class="text-uppercase">Skills</h2>
+          <ul>
+            <li><strong>HTML/CSS</strong></li>
+            <li><strong>Python</strong></li>
+            <li><strong>Typewriting</strong></li>
+            <li><strong>English Fluency</strong></li>
+          </ul>
+          
+          <h2 class="text-uppercase">Projects</h2>
+          <ul>
+            <li><strong>Pet Adoption Website</strong> – A user-friendly platform for adopting pets, built using HTML, CSS, and Flask as the backend framework.</li>
+            <li><strong>Water Supply Business Webpage</strong> – A professional website created for my father's water supply business to showcase services and contact details.</li>
+            <li><strong>Restaurant Webpage</strong> – A responsive and visually appealing website for a local restaurant, designed with HTML and CSS.</li>
+            <li><strong>Rickshitha Boutique Webpage</strong> – A custom webpage for a boutique, developed using HTML, CSS, and Flask for showcasing collections and handling customer inquiries.</li>
+          </ul>
+
+          <h2 class="text-uppercase">Education</h2>
+          <ul class="list-unstyled">
+            <li><strong>BS in Computer Science (AI)</strong> – <abbr title="Shrimathi Devkunvar Nanalal Bhatt Vaishnav College for Women ">SDNB</abbr> Vaishnav College for Women (Current)</li>
+            <li><strong><abbr title="Higher Secondary Education">HSE</abbr></strong> – Sivananda Saraswathi MHSS (2023–2024)</li>
+            <li><strong><abbr title="Secondary School Leaving Certificate">SSLC</abbr></strong> – Sivananda Saraswathi MHSS (2021–2022)</li>
+          </ul>
+
+          <h2 class="text-uppercase">Know More</h2>
+          <blockquote>
+            <a class="text-muted" href="https://www.linkedin.com/in/rickshithaanandakumar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">linkedin</a>
+           <br><a class="text-muted" href="https://github.com/Rickshitha-coder?tab=repositories">Github</a>
+			<footer>– rickshitha</footer>
+          </blockquote>
+
+        </div>
+      </div>
+	  <p class="text-info">If you want to take print out my page means <kbd>ctrl+p</kbd></p>
+    </div>
+  </div>
+
+</body>
+</html>

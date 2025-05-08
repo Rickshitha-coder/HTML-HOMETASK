@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yesteryear|Niconne|Eagle Lake|Akaya Kanadaka">
+  <title>Responsive Page</title>
+  <style>
+  body {
+  background-color: #8feed2;
+  font-family: Akaya Kanadaka;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Eagle Lake;
+  padding: 40px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.container img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+nav {
+  background-color: silver;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  margin: 10px 25px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+/* Main Layout */
+main.content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Primary Content Area */
+.primary {
+  flex: 3;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Sidebar Area */
+.sidebar {
+  flex: 1;
+  background-color: #12e0a3;
+  padding: 20px;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+td, th {
+  border: 2px solid black;
+  text-align: center;
+  padding: 8px;
+}
+
+h3 {
+  text-align: center;
+  border: 2px solid blue;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+/* Product Images in Tables */
+.primary img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Tablet Styles (768px - 991px) */
+@media (max-width: 991px) {
+  main.content {
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  main.content {
+    flex-direction: column;
+  }
+
+  .primary img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>ANAND SMART GADGETS</h1>
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/002/216/690/small_2x/gadget-minimal-thin-line-icons-set-vector.jpg" alt="Gadget World">
+    </div>
+    <nav>
+      <a href="#Mobile">Mobiles</a>
+      <a href="#Laptop">Laptops</a>
+      <a href="#Tablets">Tablets</a>
+      <a href="#Secondhand Gadgets">Secondhand Gadgets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="primary">
+      <!-- Mobile Phones Table -->
+      <h3 id="Mobile">Mobile Phones</h3>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Image</th>
+          <th>Warranty</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>Samsung Galaxy S25 Ultra</td>
+          <td><img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTZHWAeHrIlL2TUMkAwQekmAbRnszCO2p-RPpJsJMJsZD7NoaMebHSkVKN0PXDGIHhpgMxGjHnC9FZVHjOf1cZknKrGh0Tgkmbe8ITjaxy7JZjGVvNxDozf" alt="Samsung Galaxy S25 Ultra"></td>
+          <td>3 Years</td>
+          <td>₹1,29,999</td>
+        </tr>
+        <tr>
+          <td>iPhone 14 Pro Max</td>
+          <td><img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT0t7BtXMe-ZPhFjUrcjhw6IV6Ubh9UH8PRcuLUTCib8v05gsIcNNe90jB1m59KOsGj-a9dppUH2rACSoB6qnsyNcwxWF_N2LAccQp_CleDb15UgRfGCzQcxclPHdhNPcTdVPuzow&usqp=CAc" alt="iPhone 14 Pro Max"></td>
+          <td>1 Year</td>
+          <td>₹1,39,999</td>
+        </tr>
+        <tr>
+          <td>OnePlus 10 Pro</td>
+          <td><img src="https://s3no.cashify.in/cashify/store/product//6d0169a363f94d32b568f65baacbb0e4-box.jpg?p=es5sq&s=es" alt="OnePlus 10 Pro"></td>
+          <td>2 Years</td>
+          <td>₹69,999</td>
+        </tr>
+      </table>
+
+      <!-- Laptops Table -->
+      <h3 id="Laptop">Laptops</h3>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Image</th>
+          <th>Warranty</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>MacBook Pro</td>
+          <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS8a98YcISXlnsbrCTPy8a8AfGj05BtxWR8g&s alt="MacBook Pro"></td>
+          <td>1 Year</td>
+          <td>₹1,99,999</td>
+        </tr>
+        <tr>
+          <td>HP Spectre x360</td>
+          <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LYwyoHWn8JYi6qUSfLq99yDN5dl3LC1oXw&s" alt="HP Spectre x360"></td>
+          <td>1 Years</td>
+          <td>₹1,05,000</td>
+        </tr>
+        <tr>
+          <td>Lenovo ThinkPad</td>
+          <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMqVKGUeS6Z2cD23hVdm5szxcZWU9Y5xDNRw&s" alt="Lenovo ThinkPad"></td>
+          <td>2 Years</td>
+          <td>₹45,000</td>
+        </tr>
+      </table>
+
+      <!-- Tablets Table -->
+      <h3 id="Tablets">Tablets</h3>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Image</th>
+          <th>Warranty</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>Apple iPad Pro</td>
+          <td><img src="https://www.poojaratele.com/media/catalog/product/cache/28b568fbf82d79c53c9eab7361be58d0/a/p/apple-ipad-pro-10p5inch-wifi-rgold-thum2.jpg" alt="Apple iPad Pro"></td>
+          <td>2 Years/td>
+          <td>₹79,999</td>
+        </tr>
+        <tr>
+          <td>Samsung Galaxy Tab S7</td>
+          <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT5KLWzFrxqhAF9SNCH7D-Th5rMIgV9A0ISA&s" alt="Samsung Galaxy Tab S7"></td>
+          <td>1 Years</td>
+          <td>₹40,000</td>
+        </tr>
+        <tr>
+          <td>Lenovo Tab P11</td>
+          <td><img src="https://p3-ofp.static.pub//fes/cms/2025/03/07/o4u8ik94d2p9aqkrikyxr2tsdotwqz272903.png" alt="Lenovo Tab P11"></td>
+          <td>3 Years</td>
+          <td>₹29,999</td>
+        </tr>
+      </table>
+
+      <!-- Secondhand Gadgets Table -->
+      <h3 id="Secondhand Gadgets">Secondhand Gadgets</h3>
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Image</th>
+          <th>Warranty</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>iPhone 13</td>
+          <td><img src="https://www.secondkart.in/uploads/portfolio/1/1693038874251499275-big.jpeg" alt="iPhone 13"></td>
+          <td>2 Months</td>
+          <td>₹55,000</td>
+        </tr>
+        <tr>
+          <td>OnePlus 8</td>
+          <td><img src="https://apollo.olx.in/v1/files/zdtkh42zom7c1-ADVIN/image;s=272x0" alt="OnePlus 8"></td>
+          <td>5 months</td>
+          <td>₹20,000</td>
+        </tr>
+        <tr>
+          <td>MacBook Air</td>
+          <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOsfmqUxYQ3CbzhW-0eXkJPy45PK-CQ_WpNQ&s" alt="MacBook Air"></td>
+          <td>3 Months</td>
+          <td>₹65,000</td>
+        </tr>
+      </table>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Sidebar</h3>
+      <ul>
+        <li><a href="#">Amazon</a></li>
+        <li><a href="#">Flipkart</a></li>
+        <li><a href="#">Widget 3</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Anand Gadgets</p>
+  </footer>
+
+</body>
+</html>

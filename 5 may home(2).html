@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Clothing Theme</title>
+  <style>
+    /* Default (Men’s theme) */
+    :root {
+      --primary-color: #1a237e;
+      --secondary-color: #90caf9;
+      --bg-color: #f0f4f8;
+      --text-color: #1a1a1a;
+      --font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-family);
+      margin: 0;
+      padding: 0;
+    }
+
+    header, nav, footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: var(--secondary-color);
+    }
+
+    nav a {
+      color: var(--primary-color);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content h2 {
+      color: var(--primary-color);
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      margin-top: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .product-card {
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      width: 280px;
+      margin: 10px auto;
+      padding: 15px;
+      background: white;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    /* HIDE women content by default (on desktop) */
+    .women-content {
+      display: none;
+    }
+
+    /* Mobile Theme Overrides */
+    @media screen and (max-width: 767px) {
+      :root {
+        --primary-color: #e65100;
+        --secondary-color: #fff176;
+        --bg-color: #fff8e1;
+        --text-color: #4e342e;
+        --font-family: 'Georgia', serif;
+      }
+
+      /* HIDE men, SHOW women on mobile */
+      .men-content {
+        display: none;
+      }
+
+      .women-content {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>StylePoint Clothing</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Collections</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <!-- Men's Content (Desktop Only) -->
+  <div class="content men-content">
+    <h2>Men's Fashion</h2>
+    <p>Upgrade your wardrobe with our classic men's wear.</p>
+    <div class="product-card">
+      <img src="https://frenchcrown.in/cdn/shop/files/1314-TXD-BLK_2_7eee02c5-3408-4d54-9372-7d531b71635b.jpg?v=1741148835&width=3500" alt="Men's Shirt">
+      <h3>Classic Shirt</h3>
+      <p>₹1,199</p>
+    </div>
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxsE86ZTBbBv60pG4sHP0MeTv-DCOxOHOgPQ&s" alt="Men's Jeans">
+      <h3>Denim Jeans</h3>
+      <p>₹1,799</p>
+    </div>
+    <a href="#" class="btn">Shop Men's</a>
+  </div>
+
+  <!-- Women's Content (Mobile Only) -->
+  <div class="content women-content">
+    <h2>Women's Summer Collection</h2>
+    <p>Fresh looks for sunny days! Find your perfect summer outfit.</p>
+    <div class="product-card">
+      <img src="https://www.latestkurtidesigns.com/wp-content/uploads/2023/08/black-dress.jpg" alt="Women's Dress">
+      <h3>Floral Dress</h3>
+      <p>₹1,599</p>
+    </div>
+    <div class="product-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTejHaWaYF_hkD-sRHOSHD8ZU-ZuNlLH6rliw&s" alt="Women's Top">
+      <h3>Summer Top</h3>
+      <p>₹999</p>
+    </div>
+    <a href="#" class="btn">Shop Women's</a>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 StylePoint Clothing. All rights reserved.</p>
+  </footer>
+</body>
+</html>
