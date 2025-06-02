@@ -1,0 +1,257 @@
+<!--You’re designing the “About Us” section for a corporate website. The section should feature a 
+collapsible FAQ  and a list of team member profiles displayed as media objects. The design should 
+be clean and modern using Bootstrap utility classes and icon support. 
+Part 1: FAQ Accordion (Collapsible Component) 
+• Use Bootstrap’s collapse component. 
+• Create 3 FAQs, each with: 
+o A question as the heading 
+o An answer revealed upon clicking 
+o An icon next to the question (e.g., question mark or info icon using Font Awesome or 
+Bootstrap Icons) 
+• Use utility classes (mb-3, text-muted, fw-bold, etc.) to style the content. 
+Part 2: Team Member Media Object 
+• Display 3 team members using media object layout. 
+• Each entry must include: 
+o A circular image/avatar 
+o Name and role (name bold, role muted) 
+o A short bio paragraph 
+o Icons for LinkedIn and email (clickable) 
+• Use Bootstrap utility classes like: 
+o rounded-circle, me-3, d-flex, align-items-start, text-muted, mt-2-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Us | Meesho</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-color: #f0f2f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .faq-icon {
+      margin-right: 8px;
+      color: #007bff;
+	  font-size:20px;
+    }
+
+    .panel-group .panel {
+      border-radius: 10px;
+      border: none;
+      box-shadow: 0 0px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .panel-title a {
+      display: block;
+      padding: 15px;
+      
+      background-color: #ffffff;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+     
+    }
+
+    .panel-title a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .panel-body {
+      background-color: #fafafa;
+      padding: 20px;
+      border-radius: 0 0 8px 8px;
+    }
+
+    .media img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .media img:hover {
+      transform: scale(1.05);
+    }
+
+    .media i {
+      font-size: 18px;
+      margin-right: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .media i:hover {
+      transform: scale(1.2);
+    }
+
+    .bi-linkedin {
+      color: #0077b5;
+    }
+
+    .bi-envelope-fill {
+      color: #6c757d;
+    }
+
+    .section-title {
+      font-family: 'Yatra One', cursive;
+      color: #c2185b;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .about-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      margin-bottom: 40px;
+    }
+
+    .media {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    hr.my-4 {
+      border-top: 2px solid #dee2e6;
+    }
+  </style>
+</head>
+<body class="container py-5">
+
+  <!-- About Meesho Intro -->
+  <div class="about-box text-center">
+    <h2 class="section-title">About Meesho</h2>
+    <p class="lead text-muted">
+      Meesho is India's largest and fastest-growing marketplace for entrepreneurs and small businesses.
+      We empower individuals to launch their online stores with zero investment, giving them access to millions of customers across the country.
+      Whether it’s fashion, electronics, home decor, or beauty products—Meesho makes it easy to start selling online with confidence.
+    </p>
+  </div>
+
+  <!-- About Us Title -->
+  <h2 class="text-center mb-4">Frequently Asked Question</h2>
+
+  <!-- Part 1: FAQ Accordion -->
+  <h3 class="mb-3">FAQs</h3>
+  <div class="panel-group" id="faqAccordion">
+
+    <!-- FAQ 1 -->
+    <div class="panel panel-default mb-3">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#faq1">
+            <i class="bi bi-question-circle-fill faq-icon"></i>
+            <span class="fw-bold" style="font-size:20px;">What is Meesho?</span>
+          </a>
+        </h4>
+      </div>
+      <div id="faq1" class="panel-collapse collapse">
+        <div class="panel-body text-muted">
+          Meesho is a platform that enables small businesses and individuals to start their own online stores with zero investment.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="panel panel-default mb-3">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#faq2">
+            <i class="bi bi-info-circle-fill faq-icon"></i>
+            <span class="fw-bold" style="font-size:20px;">How can I join?</span>
+          </a>
+        </h4>
+      </div>
+      <div id="faq2" class="panel-collapse collapse">
+        <div class="panel-body text-muted">
+          You can join Meesho by downloading the app or visiting our website and signing up using your mobile number or email.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="panel panel-default mb-3">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#faq3">
+            <i class="bi bi-lightbulb-fill faq-icon"></i>
+            <span class="fw-bold" style="font-size:20px;">What products can I sell?</span>
+          </a>
+        </h4>
+      </div>
+      <div id="faq3" class="panel-collapse collapse">
+        <div class="panel-body text-muted">
+          You can sell fashion, electronics, home decor, beauty products, and much more through Meesho’s marketplace.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-4">
+
+
+ <!-- Meet the Team -->
+<div class="about-box">
+  <h3 class="section-title text-center">Meet Our Team</h3>
+
+  <!-- Member 1 -->
+  <div class="media mb-4">
+    <div class="media-left media-middle">
+      <img src="https://pbs.twimg.com/profile_images/1634589820721967105/xPByluzg_400x400.jpg"
+           class="media-object img-circle"
+           style="width:100px; height:100px; object-fit:cover;">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Vidit Aatrey</h4>
+      <p class="text-muted">Founder & CEO</p>
+      <p>As CEO, Vidit has been instrumental in pioneering social commerce in India, enabling millions of women
+	  to become entrepreneurs and making e-commerce accessible to underserved customers.</p>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:john@meesho.com"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+  </div>
+
+  <!-- Member 2 -->
+  <div class="media mb-4">
+   
+    <div class="media-body">
+      <h4 class="media-heading">Sanjeev Barnwal</h4>
+      <p class="text-muted">Co-Founder & CTO</p>
+      <p>As Chief Technology Officer, he has been pivotal in building Meesho's technology infrastructure and scaling its platform</p>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:jane@meesho.com"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+	 <div class="media-right">
+      <img src="https://pbs.twimg.com/profile_images/1516310091850727428/0B6IYkee_400x400.jpg"
+           class="media-object img-circle"
+           style="width:100px; height:100px; object-fit:cover;">
+    </div>
+  </div>
+
+  <!-- Member 3 -->
+  <div class="media mb-4">
+    <div class="media-left">
+      <img src="https://media.assettype.com/bloombergquint%2F2024-09-02%2Fm41q2iel%2F1652764979491.jpg?auto=format%2Ccompress&fmt=avif&w=70"
+           class="media-object img-circle"
+           style="width:100px; height:100px; object-fit:cover;">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Mohit Rajani </h4>
+      <p class="text-muted">Chief Product Officer</p>
+      <p>At Meesho, he leads the product organization, overseeing product management, design, and analytics teams </p>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:alex@meesho.com"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

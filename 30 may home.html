@@ -1,0 +1,644 @@
+<!--
+Date: 30-5-25 
+Build a simple Admin Dashboard interface to manage users. It should include: 
+1. A header using Flexbox layout 
+2. A user table listing user data (striped table with background colours) 
+3. Glyphicons for actions like edit, delete, and view 
+4. Also, include Bell icon for notifications, login icon and logout icons. 
+Sample: (Refer the sample and try to use your own idea ) 
+Click the view (eye icon) → the modal dialog appears with the data of the user 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+table tr:nth-child(even) {
+  background-color: #f2f2f2; /* striped */
+}
+
+table tr:hover {
+  background-color: #ddd; /* hover */
+}
+  </style>
+
+</head>
+<body>
+<nav class="navbar navbar-top bg-info">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">
+        <span class="glyphicon glyphicon-list"></span> Admin Dashboard
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#" class="btn btn-default btn-sm" role="button">
+          <span class="glyphicon glyphicon-search"></span> Search
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="glyphicon glyphicon-bell"></span>
+          <span class="badge">7</span>
+        </a>
+      </li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<marquee style="color:red; font-size:20px;">Students Details for Admin purpose only!!!!....</marquee>
+<div class="container">
+<table class="table table-bordered">
+<thead>
+	<tr class="bg-primary">
+		<th>Name</th>
+		<th>App ID</th>
+		<th>Course</th>
+		<th>Email</th>
+		<th>Status</th>
+		<th>Action</th>
+		
+	</tr>
+<tr>
+  <td>Rickshi</td>
+  <td>037</td>
+  <td>BSC</td>
+  <td>rickshi@gmail.com</td>
+  <td><span class="btn btn-success active">Complete</span></td>
+  <td>
+  <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod1" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Student Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:<b>Rickshi A</b></p>
+		  <p>10 Mark:420</p>
+		  <p>12 Mark:512</p>
+		  <p>Board:State Board</p>
+		  <p>user id:E24AI037 <span class="glyphicon glyphicon-user"></span></p>
+		  <p>Generate Profile:<span class="glyphicon glyphicon-qrcode"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod2" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod2" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Print Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Rickshi A</p>
+		  <p>Approved: Success <span class="glyphicon glyphicon-ok-circle"></span></p>
+		  <p>Print:<span class="glyphicon glyphicon-print"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod3"></span>
+  <div class="modal fade" id="mod3" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Rickshi A</p>
+		  <p>Are you sure to delete <span class="glyphicon glyphicon-trash"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</td>
+
+</tr>
+<!--student 2-->
+<tr>
+  <td>Durga</td>
+  <td>036</td>
+  <td>B.Com</td>
+  <td>durga@gmail.com</td>
+  <td><span class="btn btn-warning">Waiting</span></td>
+  <td>
+  <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod4" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod4" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Student Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:<b>Durga K</b></p>
+		  <p>10 Mark:460</p>
+		  <p>12 Mark:510</p>
+		  <p>Board:State Board</p>
+		  <p>user id:E24AI036 <span class="glyphicon glyphicon-user"></span></p>
+		  <p>Generate Profile:<span class="glyphicon glyphicon-qrcode"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod5" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod5" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Print Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Durga</p>
+		  <p>Approved: Waiting <span class="glyphicon glyphicon-remove-circle"></span></p>
+		  <p>Print:<span class="glyphicon glyphicon-print"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod6"></span>
+  <div class="modal fade" id="mod6" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Durga</p>
+		  <p>Are you sure to delete <span class="glyphicon glyphicon-trash"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</td>
+</tr>
+<!-- student 3-->
+<tr>
+  <td>Nivitheni</td>
+  <td>038</td>
+  <td>B.Com</td>
+  <td>nivethini@gmail.com</td>
+  <td><span class="btn btn-success">Complete</span></td>
+  <td>
+  <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod7" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod7" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Student Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:<b>Nivethini D</b></p>
+		  <p>10 Mark:390</p>
+		  <p>12 Mark:509</p>
+		  <p>Board:State Board</p>
+		  <p>user id:E24AI038 <span class="glyphicon glyphicon-user"></span></p>
+		  <p>Generate Profile:<span class="glyphicon glyphicon-qrcode"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod8" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod8" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Print Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Nivethini D</p>
+		  <p>Approved: Success <span class="glyphicon glyphicon-ok-circle"></span></p>
+		  <p>Print:<span class="glyphicon glyphicon-print"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod9"></span>
+  <div class="modal fade" id="mod9" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Nivethini D</p>
+		  <p>Are you sure to delete <span class="glyphicon glyphicon-trash"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</td>
+</tr>
+<!--Student 4-->
+<tr>
+  <td>Anitha A</td>
+  <td>039</td>
+  <td>BSC</td>
+  <td>anitha@gmail.com</td>
+  <td><span class="btn btn-success">Complete</span></td>
+  <td>
+  <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod10" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod10" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Student Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:<b>Anitha A</b></p>
+		  <p>10 Mark:450</p>
+		  <p>12 Mark:530</p>
+		  <p>Board:State Board</p>
+		  <p>user id:E24AI039 <span class="glyphicon glyphicon-user"></span></p>
+		  <p>Generate Profile:<span class="glyphicon glyphicon-qrcode"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod11" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod11" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Print Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Anitha A</p>
+		  <p>Approved: Success <span class="glyphicon glyphicon-ok-circle"></span></p>
+		  <p>Print:<span class="glyphicon glyphicon-print"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod12"></span>
+  <div class="modal fade" id="mod12" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Anitha A</p>
+		  <p>Are you sure to delete <span class="glyphicon glyphicon-trash"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</td>
+</tr>
+<!--student 5-->
+<tr>
+  <td>Mirthula</td>
+  <td>040</td>
+  <td>BBA</td>
+  <td>mirthula@gmail.com</td>
+  <td><span class="btn btn-danger disabled">Not Eligible</span></td>
+  <td>
+  <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod13" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod13" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Student Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:<b>Mirthula A</b></p>
+		  <p>10 Mark:320</p>
+		  <p>12 Mark:498</p>
+		  <p>Board:State Board</p>
+		  <p>user id:E24AI040 <span class="glyphicon glyphicon-user"></span></p>
+		  <p>Generate Profile:<span class="glyphicon glyphicon-qrcode"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod14" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod14" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Print Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Mirthula A</p>
+		  <p>Approved: Not Eligible <span class="glyphicon glyphicon-ban-circle"></span></p>
+		  <p>Print:<span class="glyphicon glyphicon-print"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod15"></span>
+  <div class="modal fade" id="mod15" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Mirthula A</p>
+		  <p>Are you sure to delete <span class="glyphicon glyphicon-trash"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</td>
+</tr>
+<!-- student 6-->
+<tr>
+  <td>Lavanya</td>
+  <td>041</td>
+  <td>B.Ed</td>
+  <td>lavanya@gmail.com</td>
+  <td><span class="btn btn-warning">Waiting</span></td>
+  <td>
+  <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod16" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod16" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Student Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:<b>Lavanya B</b></p>
+		  <p>10 Mark:350</p>
+		  <p>12 Mark:500</p>
+		  <p>Board:CBSE</p>
+		  <p>user id:E24AI040 <span class="glyphicon glyphicon-user"></span></p>
+		  <p>Generate Profile:<span class="glyphicon glyphicon-qrcode"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod17" style="margin-right:10px;"></span>
+  <div class="modal fade" id="mod17" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Print Details</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:lavanya B</p>
+		  <p>Approved:Waiting <span class="glyphicon glyphicon-remove-circle"></span></p>
+		  <p>Print:<span class="glyphicon glyphicon-print"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod18"></span>
+  <div class="modal fade" id="mod18" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+		<h4 class="modal-title">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>  
+        </div>
+        <div class="modal-body">
+          <p>Name:Lavnaya B</p>
+		  <p>Are you sure to delete <span class="glyphicon glyphicon-trash"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</td>
+</tr>
+<!--student 7-->
+<tr>
+  <td>Anjali Sharma</td>
+  <td>045</td>
+  <td>MCA</td>
+  <td>anjali.sharma@gmail.com</td>
+  <td><span class="btn btn-success">Complete</span></td>
+  <td>
+    
+    <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod19" style="margin-right:10px;"></span>
+    <div class="modal fade" id="mod19" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Student Details</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>  
+          </div>
+          <div class="modal-body">
+            <p><strong>Name:</strong> Anjali Sharma</p>
+            <p><strong>10th Mark:</strong> 450</p>
+            <p><strong>12th Mark:</strong> 498</p>
+            <p><strong>Board:</strong> CBSE</p>
+            <p><strong>User ID:</strong> E24AI045 <span class="glyphicon glyphicon-user"></span></p>
+            <p><strong>Generate Profile:</strong> <span class="glyphicon glyphicon-qrcode"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod20" style="margin-right:10px;"></span>
+    <div class="modal fade" id="mod20" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Print Details</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>  
+          </div>
+          <div class="modal-body">
+            <p><strong>Name:</strong> Anjali Sharma</p>
+            <p><strong>Approved:</strong> Success <span class="glyphicon glyphicon-ok-circle"></span></p>
+            <p><strong>Print:</strong> <span class="glyphicon glyphicon-print"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod21"></span>
+    <div class="modal fade" id="mod21" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Delete</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>  
+          </div>
+          <div class="modal-body">
+            <p><strong>Name:</strong> Anjali Sharma</p>
+            <p>Are you sure you want to delete this record? <span class="glyphicon glyphicon-trash"></span></p>
+          </div>
+          <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+<!--student 8-->
+<tr>
+  <td>Priya Kumari</td>
+  <td>046</td>
+  <td>B.Ed</td>
+  <td>priya.kumari@gmail.com</td>
+  <td><span class="btn btn-danger disabled">Not Eligible</span></td>
+  <td>
+    <span class="glyphicon glyphicon-eye-open" data-toggle="modal" data-target="#mod22" style="margin-right:10px;"></span>
+    <div class="modal fade" id="mod22" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Student Details</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>  
+          </div>
+          <div class="modal-body">
+            <p><strong>Name:</strong> Priya Kumari</p>
+            <p><strong>10th Mark:</strong> 390</p>
+            <p><strong>12th Mark:</strong> 465</p>
+            <p><strong>Board:</strong> State Board</p>
+            <p><strong>User ID:</strong> E24AI046 <span class="glyphicon glyphicon-user"></span></p>
+            <p><strong>Generate Profile:</strong> <span class="glyphicon glyphicon-qrcode"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="glyphicon glyphicon-print" data-toggle="modal" data-target="#mod23" style="margin-right:10px;"></span>
+    <div class="modal fade" id="mod23" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Print Details</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>  
+          </div>
+          <div class="modal-body">
+            <p><strong>Name:</strong> Priya Kumari</p>
+            <p><strong>Approved:</strong> Not Eligible <span class="glyphicon glyphicon-ban-circle"></span></p>
+            <p><strong>Print:</strong> <span class="glyphicon glyphicon-print"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="glyphicon glyphicon-trash" data-toggle="modal" data-target="#mod24"></span>
+    <div class="modal fade" id="mod24" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Delete</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>  
+          </div>
+          <div class="modal-body">
+            <p><strong>Name:</strong> Priya Kumari</p>
+            <p>Are you sure you want to delete this record? <span class="glyphicon glyphicon-trash"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </td>
+</tr>
+</table>
+<nav class="navbar  navbar-fixed-bottom bg-info">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">
+        <span class="glyphicon glyphicon-home">Home</span>
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#"><span class="glyphicon glyphicon-refresh"></span></a>
+      </li>
+      <li><a href="#"><span class="glyphicon glyphicon-share"></span></a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-signal"></span></a></li>
+    </ul>
+  </div>
+</nav>
+
+
+</body>
+</html>

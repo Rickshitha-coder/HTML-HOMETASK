@@ -1,0 +1,65 @@
+<!-- You're building a student assignment dashboard for a university web app using Bootstrap. The 
+dashboard should display assignment statuses, allow students to switch between different subjects, 
+show notifications, and track progress on current assignments. 
+Requirements: 
+1. Alert Message: 
+Display an alert notifying the user about a deadline coming up. 
+2. Badges: 
+Show the number of pending assignments next to each subject. 
+3. Button Group: 
+Create a toggle-style button group to switch between subjects (Math, Science, English). 
+4. Buttons: 
+Include a “Submit Assignment” and a “Download Materials” button. 
+5. Progress Bar: 
+Show progress of assignment completion (e.g., 60%). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Dashboard – HTML, CSS, Python</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="background-color: #f4f6f8;">
+
+<div class="container mt-4">
+  <h2 class="text-center mb-4">📘 Student Assignment Dashboard</h2>
+
+  <!-- Alert -->
+  <div class="alert alert-warning" role="alert">
+    ⚠️ Reminder:HTML assignment is due tomorrow!
+  </div>
+
+  <!-- Subject Button Group with Badges -->
+  <div class="btn-group btn-group-toggle d-flex mb-4" data-toggle="buttons">
+    <label class="btn btn-outline-primary active flex-fill">
+      <input type="radio" name="subjects" checked> HTML <span class="badge badge-secondary">1</span>
+    </label>
+    <label class="btn btn-outline-success flex-fill">
+      <input type="radio" name="subjects" > CSS <span class="badge badge-secondary">2</span>
+    </label>
+    <label class="btn btn-outline-dark flex-fill">
+      <input type="radio" name="subjects" > Python <span class="badge badge-secondary">3</span>
+    </label>
+  </div>
+
+  <!-- Buttons -->
+  <div class="text-center mb-4">
+    <button class="btn btn-success mr-2">Submit Assignment</button>
+    <button class="btn btn-outline-info">Download Materials</button>
+  </div>
+
+  <!-- Progress Bar -->
+  <h5>Assignment Progress</h5>
+  <div class="progress mb-4">
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 70%">
+      70% Complete
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

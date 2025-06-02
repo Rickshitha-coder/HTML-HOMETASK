@@ -1,0 +1,154 @@
+<!--You're building the "Product Listing Page" for an e-commerce website named ShopZone 
+using Bootstrap. Your goal is to create a responsive and user-friendly interface using the 
+following components: 
+Create a responsive navbar with the following: 
+• Brand: "ShopZone" 
+• Links: Home, Products, Cart, Contact 
+• A toggle menu for smaller screens (hamburger menu) 
+• Below the navbar, show a breadcrumb navigation like: 
+Home > Products > Electronics 
+On the left side of the page (in a sidebar), display a list group of product categories: 
+• All Products 
+• Electronics 
+• Clothing 
+• Home Appliances 
+• Sports 
+Highlight the active category as Electronics-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Shop Zone</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="#" style="margin-bottom:15px;">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVOrCwzl5bsjsjNirvDMI0a_nbjGiZxjeT9A&s" alt="Avatar Logo" style="width:40px;" class="rounded-pill"> 
+       </a>
+		<a href="#" class="navbar-brand">Shop Zone</a>
+		
+		</div>
+		<div class="collapse navbar-collapse" id="Navbar">
+		<ul class="nav navbar-nav navbar-right">
+		<li><a href="#home">Home</a></li>
+		<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+			<li><a href="#men">Men</a></li>
+			<li><a href="#women">Women</a></li>
+			</ul>
+		</li>
+		<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">cart<span class="caret"></a>
+			<ul class="dropdown-menu">
+			<li><a href="#">Ordered</a></li>
+			<li><a href="#">Delievered</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Contact</a></li>
+		</ul>
+		</div>
+	</div>
+</nav>
+<section id="home">
+  <div class="card text-center bg-success mt-7">
+    <div class="card-body">
+      <h2 class="card-title">Welcome to ShopZone!</h2>
+      <p class="card-text">
+        Your one-stop shop for everything you need — from the latest electronics to trendy clothing and reliable home appliances.
+      </p>
+	  <button type="button" class="btn btn-primary">Know More</button>
+    </div>
+	<div class="card-footer text-muted">
+	Chennai
+	</div>
+  </div>
+</section>
+<section id="product">
+<h2 class="text-center">Products</h2>
+<ul class="breadcrumb text-center">
+    <li><a href="#">Product</a></li>
+    <li><a href="#">Men</a></li>
+    <li><a href="#">Women</a></li>
+  
+  </ul>
+
+<div class="container">
+  <h4 class="mb-4" id="women">Women's Collection</h4>
+
+  <div class="row">
+    <!-- Card 1 -->
+    <div class="col-sm-6">
+      <div class="custom-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzQma18oihOoFZK_DEKrxt_36P7Zh_cOntGQ&s" style="widht:80px; height:80px;"alt="Women's Dress" />
+        <h5>Floral Summer Dress</h5>
+        <p class="text-muted">Light, breezy, and perfect for summer outings.</p>
+        <a href="#" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-sm-6">
+      <div class="custom-card">
+        <img src="https://www.alamodelabel.in/cdn/shop/files/DD3E22C1-A8E7-4416-9869-D7FC9090BBDF.jpg?v=1735460493" style="widht:80px; height:80px;" alt="Women's Jacket" />
+        <h5>Classic Denim Jacket</h5>
+        <p class="text-muted">Timeless style meets modern comfort.</p>
+        <a href="#" class="btn btn-primary">Buy Now</a>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="mb-4" id="men">Men's Collection</h4>
+
+<div class="row">
+  <!-- Card 1 -->
+  <div class="col-sm-6">
+    <div class="custom-card">
+      <img src="https://krisandjohn.in/cdn/shop/files/4_c44d8fd3-1578-46f1-a9f3-6a08b055d7e8.jpg?v=1748437888" style="width:80px; height:80px;" alt="Men's Shirt" />
+      <h5>Casual Cotton Shirt</h5>
+      <p class="text-muted">Comfortable and stylish for everyday wear.</p>
+      <a href="#" class="btn btn-primary">Buy Now</a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="col-sm-6">
+    <div class="custom-card">
+      <img src="https://images-cdn.ubuy.co.in/6541745b333cb84041602332-men-39-s-3-pieces-business-suit-1.jpg" style="width:80px; height:80px;" alt="Men's Suit" />
+      <h5>Elegant Formal Suit</h5>
+      <p class="text-muted">Perfect fit for business and formal occasions.</p>
+      <a href="#" class="btn btn-primary">Buy Now</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="container">
+<h2 class="text-center text-muted">Ratings</h2>
+<ul class="list-group">
+  <li class="list-group-item">All Products<span class="badge">100%</span></li>
+  <li class="list-group-item active">Electronics<span class="badge">90%</span></li>
+  <li class="list-group-item">Clothing<span class="badge">70%</span></li>
+  <li class="list-group-item">HomeAppliances<span class="badge">85%</span></li>
+  <li class="list-group-item disabled">Sports<span class="badge">40%</span></li>
+</ul>
+</div>
+
+</section>
+
+
+
+</body>
+</html>
+
+
